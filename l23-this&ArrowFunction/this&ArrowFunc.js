@@ -53,4 +53,4 @@ console.log(addTwo(3, 4))
 
 // what if we have to return an object
 const user = (num1, num2) => ({username : "Ashwani"})
-console.log(user())
+console.log(user());
