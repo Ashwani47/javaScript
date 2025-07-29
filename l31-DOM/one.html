@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM-Manipulation</title>
+</head>
+<body>
+    <!-- DOM stands for document object model  :- i.e. it is to know about the model of aur document that is webpage and their objects i.e. head tag body tag etc. here -->
+
+    <!-- open console on browser and run console.log(window) :- open dropdown and find document open it now we will use em frequently. another way is to wite console.log(window.document) || or console.log(document) directly but it will show only html page like because that is more commonly used but if you want to check document object completely as u've seen via window than just run console.dir(document) -->
+
+    <!-- lets understand Document Object Model for this current web page with a diagram :-
+    
+                                                        -------------------------
+                                                        |        WINDOW         |
+                                                        -------------------------
+                                                                   |
+                                                        -------------------------
+                                                        |        DOCUMENT       |
+                                                        -------------------------
+                                                                   |
+                                                        -------------------------
+                                                        |        HTML           |
+                                                        -------------------------
+                                                                   |
+                                        ---------------------------------------------------------------
+                                        |                                                             |
+                            -------------------------                                         -------------------------
+                            |        Head           |                                         |        Body           |
+                            -------------------------                                         -------------------------
+                                        |                                                                 |
+                            -------------------------                                              ---------------
+                            |                       |                                              |    Div      | ------- Attribute
+                       ------------            ------------                                        ---------------    
+                       |   Title  |            |   Meta   |                                               |    
+                       ------------            ------------                                    -------------------------
+                            |                       |                                          |                       |
+                        Text node               Attribute                                  ----------              ----------
+                                                                                           |   H1   |              |   P    |
+                                                                                           ----------              ----------
+                                                                                               |                       |
+                                                                                        ----------------           Text node
+                                                                                        |              |
+                                                                                     Attribute     Text node
+    -->
+
+    <div class="bg-black">
+        <h1 class="heading">
+            DOM Learning on chai aur code.
+        </h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    
+<!-- there are various exercises that you can do on browser console such as open brendan erich wikipedia just for reference then you can do :-
+-> console.log(document)  :- provides document structure
+-> console.log(document.links)  :- provides collection of allmost all the links used on that webpage
+-> console.log(document.links[2])  :- gives you the second link present in the collection
+-> document.getElementById("firstHeading")  :- it searches an element with the given id
+-> document.getElementById("firstHeading").innerHTML = "<h2>YOO!!!</h2>"  :- it is used to search an element with the given id then replace the htm written inside it with your own
+-->
+
+</body>
+</html>
