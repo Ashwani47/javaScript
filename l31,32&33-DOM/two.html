@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM-Manipulation</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <h1 class="heading" id="title">Dom learning on chai aur code. <span style="display: none;">Test text</span></h1>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, inventore?</p>
+
+        <input type="password">
+        <ul>
+            <li class = "list-item">one</li>
+            <li class = "list-item">two</li>
+            <li class = "list-item">three</li>
+            <li class = "list-item">four</li>
+        </ul>
+    </div>
+
+    <!-- now we will learn how to capture elements or objects of a web page later we will discuss on their properties
+    first of all we will do most of the thing sin console...
+    -> document.getElementById("@id") -> returns the whole tag
+    -> document.getElementById("@Id").id -> returns the id of that element
+    -> document.getElementById("@Id").className -> returns the class of that element
+    -> document.getElementById("@Id").getAttribute("attribute_name") -> it will return the value of any attribute that you ask for.
+    -> document.getElementById("@Id").setAttribute("attribute_name", "value") -> it will set a new attribute or update an existing attribute.but note ye humesha overwrite karega existing attribute ko but agar hum chahte hai ki mera previous attribute to rahe hi or saath me ek or attribute set ho jaaye to value me space laga kr existing value bhi daal do.
+
+    -> ab chaahe to inhi sb ko kisi variable me store bhi kar skte hai jaise....
+    const title = document.getElementById("@Id")
+    ab inhi se hum or bhi kaam kar skte hai jaise or bhi style add kar skte hai jaise...
+    title.style.backgroundcolor = "Magenta"
+
+    how to extract the content from an element (suppose from the variable title in this case)....
+    -> title.textContent -> gives you the text content of that element. isme saara ka saara text content milega chahe wo visible ho ya na.
+    -> title.innertext -> sirf wo text aayeg ajo ki visible hai bs.
+    -> title.innerHTML -> ye uske andar agar html hai to wo bhi as it is return kar dega.
+
+    ab hum or bhi tarah se kisi bhi element ko select kr skte hai jaise ki getElementById("id") , .getElementByClassName("class") but ye class name wale pr hume html collection mil raha ... aage or discuss krenge ki html collection kya hota hai node list kya hota hai.
+
+    other query selectors that we will be usinng in real world are :-
+    -> document.querySelector("h2") -> ye sirf pahala h2 select krke dega jbki
+    -> document.querySelectorAll("h2") -> ye saare h2 ka ek node list bana kr return karega
+    or kaise querySelector ka use kr skte hai? maanlo hume koi id ya class select karna hai to hum direct queries likhte hai...jaise
+    -> document.querySelector("#title") -> it will select the element with id title(yaha pr similar css wala syntax likhte hai, id ke liye # and class ke liye .simillarly css ke slectors ki tarah kaam karta hai.) ek or example lete hai...
+    -> document.querySelector("input[type="password"]") -> ye select karega ek input field jiska type password hai.
+
+    now we want to select all the items ... use .querySelectorAll("query")
+    -> document.querySelectorAll("li") -> ye saare li ka ek node list bana kr return karega
+    ab is nodelist ko samajhne ke liye hum or kuchh karte hai... kyunki node list pr directly kaam nhi kr skte koii bhi jaise style add karna ya kuchh bhi..kyunki usme sirf ek element nhi hai...
+    -> const tempLilist = document.querySelectorAll("li") -> uss node list ko ek variable me hold kar liye hai...
+    -> tempLiList[0].style.color = "green" -> uss node list ka pahla element ka style change kiya hai.
+    -> tempLiList.forEach( function (l) {
+        l.style.color = "green"
+    } )
+
+    HTMLCollection :- isme looping ke liye koi function hi nhi hai to loop lagana ho to pahale ise convert karenge array me...
+    -> const classItem = document.getElementsByClassName("list-item")
+    -> Array.from(classItem) -> this will create an array from the goven value. but ye orginal classItem me change nhi kareg wo abhi bhi HTMLCollection hi hai.uske liye use kisi dusre variable me store karna hoga.
+    -> const arrClassItem = Array.from(classItem) -> ab ispr looping kar skte hai..
+    -> arrClassItem.forEach( (li) => li.style.color = "aqua" ) 
+
+
+    -->
+    
+</body>
+</html>
