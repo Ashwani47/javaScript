@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code | DOM</title>
+</head>
+<body style="background-color: #212121; color: aqua;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const newLi = document.createElement("li")
+        newLi.innerHTML = `${langName}`
+        document.querySelector(".language").appendChild(newLi)
+    } // ye theek to hai but isme bhi ek chhota sa problem hai ki jub bhi hum innerHTML jaisa use krte hai to usko ura ke pure document tree ko traverse krna hota hai jo kaafi tidious ho jaata hai agar laakhon me entries honi hai to.
+    addLanguage("python")
+    addLanguage("Kotlin")
+
+    // thoda optimised way
+    function addOptiLanguage (langName){
+        const newLi = document.createElement("li")
+        newLi.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(newLi)
+    }
+    addOptiLanguage("GoLang")
+
+    // editing any value
+    const secondLang = document.querySelector("li:nth-child(2)")
+    //secondLang.innerHTML = "MoJo"
+    const newLi = document.createElement("li")
+    newLi.textContent = "MoJo" //  can also be done using append child which is more efficient way but here we dont have many entries and we've already learned about appendChild so no need to do it here.
+    secondLang.replaceWith(newLi) // it will replace secondLang with newLi.
+
+    // editing-2 : replace javascript with typescript.
+    const firstLang = document.querySelector("li")
+    const newlang = document.createElement("li")
+    newlang.appendChild(document.createTextNode("TypeScript"))
+    firstLang.replaceWith(newlang)
+
+    //editing-3 : replace GoLang with nodeJs
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.outerHTML = "<li>nodeJs</li>"
+
+    // Remove Elements : remove Kotlin
+
+    const thirdlang = document.querySelector("li:nth-child(3)")
+    thirdlang.remove()
+
+</script>
+</html>
