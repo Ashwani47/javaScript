@@ -15,7 +15,7 @@ let isLoggedIn = false // boolean datatype.
 // null -> it is a datatype.infact it is a standalone value in itself.
 // symbol -> uniqueness.
 
-// others
+// others 
 // object -> we will discuss later.
 
 // we have an inbuilt function 'typeof' which tells us about the type of the variable.
