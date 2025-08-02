@@ -1,6 +1,6 @@
 const accountId =145245 // const :- can not be changed in future
 let accountEmail = "ashwani@gmail.com" // can be changed
-var accountPassword = "12345" // can be changed
+var accountPassword = "123456" // can be changed
 accountCity = "varanasi" // also possible in javascript and can be changed also in future but not preffered to declare andy variable like this.
 let accountState // just declaration . not initialized yet.
 
