@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashwani</title>
+</head>
+<body style="background-color: #212121; color: aqua;">
+    
+</body>
+<script>
+    const div = document.createElement("div") // creating a new div
+    console.log(div)
+    div.className = "main"
+    div.id = Math.round(Math.random()*10 + 1)
+    div.setAttribute("title", "generated title")
+    div.style.backgroundColor = "green"
+    div.style.padding = "12px"
+    // now how to add texts?
+    // // method 1
+    // div.innerText = "Hello" // but ye professionals ke according inefficient hai kyunki inme values purani wali pahale laayega phir usme update krke bhejega.
+    // method 2
+    const addText = document.createTextNode("Chai Aur Code") // ye ek text node create karega phir baad me isko hum apane div me append kar denge
+    div.appendChild(addText) // addText ko append kr diya
+    // abhi tk ye div sirf memory kr andar hi hai wo page se attached hi nhi hai. uske liye hume attach karna hoga
+
+    document.body.appendChild(div) // jaise hi ye likhe mera naya div jise humne create kiya tha wo mere screen pr show hone lagega.
+    
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - chai aur code</title>
+</head>
+<body style="background-color: #212121; color: aqua;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+    
+</body>
+<script>
+    const parent = document.querySelector(".parent")
+    // console.log(parent)
+    // console.log(parent.children) // an important property that returns a HTMLCollection of all the children nodes.
+    // console.log(parent.children[0].innerText)
+
+    // for (let i = 0; i < parent.children.length; i++){
+    //     console.log(parent.children[i].innerHTML)
+    // }
+
+    parent.children[1].style.color = "orange"
+
+    // // moving from parent to child
+    // console.log(parent.firstElementChild) // important property and usefull. some other properties are.
+    // console.log(parent.lastElementChild)
+
+    // // moving from child to parent
+    // const dayOne = document.querySelector(".day")
+    // console.log(dayOne)
+    // console.log(dayOne.parentElement) // returns the parent element
+    // console.log(dayOne.nextElementSibling) // returns the next sibling element.
+
+    console.log("NODES: ", parent.childNodes) // ab hum socheneg ki hume to monday tuesday ... jaisi values milni chahiye thi but yaha to kuchh or hi mil raha hai to ye ek node tree jaisa hai jaise ki first basic lecture me banaye the.
+
+</script>
+</html>
