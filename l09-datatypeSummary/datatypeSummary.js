@@ -6,7 +6,7 @@
 
 // Reference type or non-primitive :- Arrays, Objects, Functions.
 
-// arrays
+// arrays 
 const heroes = ["shhaktiman", "naagraaj", "doga"]
 
 //objects
