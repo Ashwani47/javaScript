@@ -1,0 +1,30 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #212121;
+    color: #fff;
+}
+
+.center{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#banner{
+    font-size: 30px;
+}
+
+#clock{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    background-color: orange;
+    border-radius: 10px;
+    padding: 15px 40px;
+    margin-top: 10px;
+}
