@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="horse" src="https://wallpapers.com/images/hd/black-cute-horse-kzolp2qzrak8o279.jpg" alt="horse"></li>
+            <li><img width="200px" id="moon" src="https://www.practically.com/web/assets/blog/100/8.jpeg" alt="moon"></li>
+            <li><img width="200px" id="beach" src="https://cdn.pixabay.com/photo/2016/01/27/17/12/tropical-1164934_1280.jpg" alt="beach"></li>
+            <li><img width="200px" id="mountain" src="http://s3.amazonaws.com/rapgenius/1361742798_Mountain-Wallpapers-.jpg" alt="mountain"></li>
+            <li><img width="200px" id="city" src="https://image.pbs.org/video-assets/qi7trgH-asset-mezzanine-16x9-bZvvZ7l.jpg" alt="city"></li>
+            <li><a style="color: aliceblue; text-decoration: none;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+    
+</body>
+<script>
+    // ----------------------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>>.  ab maan lo ki mujhe #mountain pr onclick lagana hai to kayi log kya kare uske tag ke andar hi onclick="alert('mountain')" likh denge jo ki bilkul bhi achhi approach nhi hai.ye ek feasible approach nhi hai jb humare project scale krenge tb dikkat hoga. but react me ye kar skte hai.
+
+    // // second approach-
+    // document.getElementById('mountain').onclick = function(){
+    //     alert('mountain clicked')
+    // } // iss approach me bhi problem hai jb hum kisi aise id ya kahi pr onclick ka use krte hai to waha se saare informations nhi milte hai.. hume eventListeners ka use karna chahiye.
+
+    // // third approach(current best) - kyunki event listeners sirf on click ki functionality hi nhi blki propogation ki functionality bhi deta hai.
+    // // .addEventListener('konsaEventListenKrRahe', function(){ usko listen karne pr kyaa kaam karwana hai }, false/true) ........ye third parameter default taur pr false hi hota hai or iske baare me aage discuss karenge.isiko event bubbling bhi kahte hai.
+    // document.getElementById('mountain').addEventListener('click', () => {
+    //     alert('mountain clicked again !')
+    // })
+
+    // fourth approach - attachEvent :- ye sb pahale kaam me aate the
+    // fifth approach - jQuery framework hua karta tha usme ek .on krke eventlistener hota tha
+
+    // ------------------------------>>>>>>>>>>>>>>>>>>>>>>>>> mostly do types ke event milte hai 1. browser events and 2. environment events.
+
+    // --------------------------->>>>>>>>>>>>>>>>>>> event ke baare me kya kya padhna hai? types, timestamp, defaultprevented, target, toElement, srcElement, currentTarget, clientX, clientY, screenX, screenY, tiltX, tiltY, altKey, ctrlKey, shiftKey, keyCode 
+
+    // // ------------------------>>>>>>>>>>>>>>>>>>>>>>>> event propogation :- iska do context hota hai 1.event bubbling(false :- yahi default bhi hota hai)   2.event capturing(true :- kuchh cases me use krna padta hai).
+    // document.getElementById('images').addEventListener('click', (e) => {
+    //     console.log("clicked inside the ul.")
+    // }, false)
+    // document.getElementById('mountain').addEventListener('click', (e) => {
+    //     console.log("mountain clicked")
+    //     e.stopPropagation() // but maanlo bubbling event ho raha hai but aap chahte hai ki wo bubble hokr apne se top order pr naa jaaye to ye use krenge.
+    // }, false)
+    // // ab dekhte hai kise click krne pr konsa activate hota hai kyunki pahla wala to activate hona chahiye jb hum images pr click kre yaani ki ul me or dusra waall hona chahiye jb hum specifically mountain pr click kre. leki jb hum mountain pr click krenge to pahla wala bhi to activate hona chahiye kyunki akhir wo bhi to ul ke andar hai to ab dekhte hai ki kya hota hai.
+    // // agar event propogation false set hai mtlb event bubbling hoga yaani ki inside to outside. to pahale mountain clicked and then ul clicked hoga.
+    // // bbut agar true set hai value to event propogation event capturing mode me hai yaani ki top to bottom or outside to inside yaani ki pahale clicked on ul phir clicked on mountain hoga. ab ye sb depend krta hai use cases pr.
+
+    // // ------------------------->>>>>>>>>>>>>>>> now lets learn about preventdefault
+    // document.getElementById('google').addEventListener('click', (e) => {
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log("google clicked")
+    // }, false)
+
+    // ---------------->>>>>>>>>>>>>>> task: mai kisi bhi image pr click kru to wo image gayab ho jaaye.
+
+    document.getElementById('google').addEventListener('click', (e) => {
+        e.preventDefault()
+    }, false)
+    document.querySelector('#images').addEventListener('click', (e)=>{
+        // abhi to theek tarah se kaam kar raha hai but agar hum image ke left right bhi click kr rahe hai tb to sb kuchh hatt jaa raha.kyunki hum li pr click kr de rahe to uska pura parent yaani ul hi gayab ho gaya.isse bachane ke liye hum kuchh strict checks laga skte hai....
+        if(e.target.tagName === 'IMG' || e.target.tagName === 'A'){ // ab ye tag name mere target ka konsa tag hai wo batata hai jise IMG form img tag LI for list item tag etc...
+            let removeIt = e.target.parentNode
+            removeIt.remove() // method-1
+            // removeIt.parentNode.removeChild(removeIt) // method-2 :- bit more confusing but still functional.
+        }
+    }, false)
+
+</script>
+</html>
