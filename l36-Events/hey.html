@@ -41,6 +41,80 @@
 
     // --------------------------->>>>>>>>>>>>>>>>>>> event ke baare me kya kya padhna hai? types, timestamp, defaultprevented, target, toElement, srcElement, currentTarget, clientX, clientY, screenX, screenY, tiltX, tiltY, altKey, ctrlKey, shiftKey, keyCode 
 
+//     Types of Events
+
+// Events are categorized based on their source:
+
+// (a) Mouse Events
+
+// click → single click
+
+// dblclick → double click
+
+// mousedown → mouse button pressed down
+
+// mouseup → mouse button released
+
+// mouseover → pointer enters element
+
+// mouseout → pointer leaves element
+
+// mousemove → pointer moves
+
+// contextmenu → right-click
+
+// (b) Keyboard Events
+
+// keydown → key is pressed down
+
+// keyup → key is released
+
+// keypress → (deprecated) key pressed (not reliable for all keys)
+
+// (c) Form Events
+
+// submit → form submitted
+
+// change → input value changes (on blur for text inputs)
+
+// input → input changes immediately (live typing)
+
+// focus → element gains focus
+
+// blur → element loses focus
+
+// reset → form reset
+
+// (d) Window / Document Events
+
+// load → page/resources loaded
+
+// resize → browser window resized
+
+// scroll → page scrolled
+
+// unload → page closing/unloading
+
+// DOMContentLoaded → HTML loaded and parsed (faster than load)
+
+// (e) Clipboard Events
+
+// copy → user copies content
+
+// cut → user cuts content
+
+// paste → user pastes content
+
+// (f) Touch / Pointer Events (Mobile/Tablet)
+
+// touchstart, touchend, touchmove
+
+// pointerdown, pointerup, pointermove
+
+// (g) Drag & Drop Events
+
+// dragstart, dragend, drag, drop, dragenter, dragleave, dragover
+
     // // ------------------------>>>>>>>>>>>>>>>>>>>>>>>> event propogation :- iska do context hota hai 1.event bubbling(false :- yahi default bhi hota hai)   2.event capturing(true :- kuchh cases me use krna padta hai).
     // document.getElementById('images').addEventListener('click', (e) => {
     //     console.log("clicked inside the ul.")
@@ -55,24 +129,24 @@
 
     // // ------------------------->>>>>>>>>>>>>>>> now lets learn about preventdefault
     // document.getElementById('google').addEventListener('click', (e) => {
-    //     e.preventDefault()
+    //     // e.preventDefault()
     //     e.stopPropagation()
     //     console.log("google clicked")
     // }, false)
 
-    // ---------------->>>>>>>>>>>>>>> task: mai kisi bhi image pr click kru to wo image gayab ho jaaye.
+    // // ---------------->>>>>>>>>>>>>>> task: mai kisi bhi image pr click kru to wo image gayab ho jaaye.
 
-    document.getElementById('google').addEventListener('click', (e) => {
-        e.preventDefault()
-    }, false)
-    document.querySelector('#images').addEventListener('click', (e)=>{
-        // abhi to theek tarah se kaam kar raha hai but agar hum image ke left right bhi click kr rahe hai tb to sb kuchh hatt jaa raha.kyunki hum li pr click kr de rahe to uska pura parent yaani ul hi gayab ho gaya.isse bachane ke liye hum kuchh strict checks laga skte hai....
-        if(e.target.tagName === 'IMG' || e.target.tagName === 'A'){ // ab ye tag name mere target ka konsa tag hai wo batata hai jise IMG form img tag LI for list item tag etc...
-            let removeIt = e.target.parentNode
-            removeIt.remove() // method-1
-            // removeIt.parentNode.removeChild(removeIt) // method-2 :- bit more confusing but still functional.
-        }
-    }, false)
+    // document.getElementById('google').addEventListener('click', (e) => {
+    //     e.preventDefault()
+    // }, false)
+    // document.querySelector('#images').addEventListener('click', (e)=>{
+    //     // abhi to theek tarah se kaam kar raha hai but agar hum image ke left right bhi click kr rahe hai tb to sb kuchh hatt jaa raha.kyunki hum li pr click kr de rahe to uska pura parent yaani ul hi gayab ho gaya.isse bachane ke liye hum kuchh strict checks laga skte hai....
+    //     if(e.target.tagName === 'IMG' || e.target.tagName === 'A'){ // ab ye tag name mere target ka konsa tag hai wo batata hai jise IMG form img tag LI for list item tag etc...
+    //         let removeIt = e.target.parentNode
+    //         removeIt.remove() // method-1
+    //         // removeIt.parentNode.removeChild(removeIt) // method-2 :- bit more confusing but still functional.
+    //     }
+    // }, false)
 
 </script>
 </html>
