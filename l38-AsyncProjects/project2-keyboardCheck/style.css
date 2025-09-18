@@ -1,0 +1,100 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8; /* soft light blue background */
+    color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Wrapper for side-by-side layout */
+.wrapper {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+    max-width: 1000px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Individual containers */
+.container {
+    flex: 1 1 45%;
+    background: linear-gradient(135deg, #ffffff, #e6f0fa); /* subtle gradient */
+    padding: 35px 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect for elegance */
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+/* Headings */
+h1 {
+    font-size: 1.8rem;
+    color: #1a1a2e; /* deep blue */
+    margin-bottom: 15px;
+}
+
+/* Instructions */
+p {
+    color: #555d66;
+    margin-bottom: 20px;
+}
+
+/* Detail boxes */
+#keyDetails p, #clickDetails p {
+    background: #fdfdfd; /* soft white */
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-left: 4px solid #667eea; /* subtle accent color */
+    transition: background 0.3s, border-color 0.3s;
+}
+
+/* Highlight detail box on value change */
+#keyDetails p span, #clickDetails p span {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    word-break: break-word;
+}
+
+/* Labels */
+#keyDetails p strong, #clickDetails p strong {
+    display: block;
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 6px;
+}
+
+/* Responsive: stack containers on small screens */
+@media (max-width: 800px) {
+    .wrapper {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .container {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+}
