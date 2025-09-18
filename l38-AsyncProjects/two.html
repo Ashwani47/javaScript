@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+
+    <h1>Async in Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    
+</body>
+<script>
+
+    // const myName = function() {
+    //     console.log('My name is Ashwani');
+    // }
+    const myName = function(str) {
+        console.log(`My name is ${str}`);
+    }
+    // const stop = setInterval(myName, 1000, "Ashwani"); // isme ek third parameter bhi hota hai jo ki function ke andar pass hota hai. agar function me parameter nahi hai to wo ignore ho jata hai.
+
+    // but i want to start and stop this interval on button click.
+    let loop;
+    document.getElementById('start').addEventListener('click', function() {
+        loop = setInterval(myName, 1000, "Ashwani");
+        console.log('Interval started');
+    });
+    document.getElementById('stop').addEventListener('click', function() {
+        clearInterval(loop);
+        console.log('Interval stopped');
+    });
+
+
+</script>
+</html>

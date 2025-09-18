@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    
+    <h1>Async in Javascript</h1>
+    <button id="stop">Stop</button>
+
+
+</body>
+<script>
+    // // setTimeout(handler, time) :- it is not a part of core javascript but it is a part of web api.
+    // // handler :- it is nothing but just call back function.
+    const sayHello = () =>{
+        console.log("Hello World");
+    }
+    const changeText = () => {
+        document.querySelector('h1').innerHTML = "Yoo"
+    }
+    const changeMe = setTimeout(changeText,2000); // 2000ms ka time do uske baad me ye kaam kardunga. yaha pr hum sayHello function ko as a reference pass kar rahe hai but chahe to hum ise as a function call bhi pass kar sakte hai. jaise ki setTimeout(sayHello(),2000); but isme ye turant call ho jayega aur undefined return karega. isliye hum ise as a reference pass karte hai taki wo 2 second ke baad call ho.or haan hum isme normal call back function ki tarah bhi pass kar skte the.
+
+    // setInterval(handler, interval) // :- ye kya karega ki aap mujhe itana time do uske baad mai uss interval pr specific given kaam ko lagatar karta rahunga.
+
+    // ab maanlo mujhe is timeout call ko rokna hia mtlb ki uss given time se pahale hi stop kaise kare use? we will use clearTimeout() method
+    // clearTimeout() // ab isko ek reference dena hoga ki ye kis setTimeout kko clear krega.
+    // clearTimeout(greet) // but ye to turant stop kardega mere setTimeout ko pr aisa hoga to mer asetTimeout lagane ka fayda hi kya hua. isliye mujhe ye clearTimeout kisi event pr lagana hoga.
+    document.querySelector('#stop').addEventListener('click', () => {
+        clearTimeout(changeText) 
+        console.log('STOPPED')
+    })
+</script>
+</html>
