@@ -1,0 +1,77 @@
+<!--                                                                              API :- 
+Definition:
+An API is a set of rules, protocols, and tools that define how software components should interact.
+Purpose:
+It hides the internal details of how a system works and only exposes the necessary functionalities so developers can use them easily.
+
+some famous APIs are github.api/users , twitter.api/users, google.maps.api , randumusers.me/api etc
+an important tool is JSON formatter to view the data in a structured way. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Request</title>
+    </head>
+    <body>
+        
+    </body>
+<script>
+
+// ab hum sub sochenge ki hum fetch padhenge but nhi wo naya hai wo recently 2-4 saalo me introduce hua hai but usse pahale hume xmlhttprequest ke baare me jaana chahiye kyunki fetch se pahale bhi api calls hoti thi or ye xmlhttprequest kaafi acchhi cheez hai.
+// key point is to go and study and research about xmlhttprequest , AJAX, etc.
+
+    //                                                      XMLHttpRequest
+    // const requestURl = 'https://api.github.com/users/Ashwani47'
+    // const xhr = new XMLHttpRequest() // yaha pr ye XMLHttpRequest ek class hai or iska hume ek object banana padega taaki hum pahale iske baar eme jaan paaye or.
+
+    // // // .open() // ye open() hi hai jo ki request ko bhejta hai.
+    // // // iske andar do parameters lagate hai. pahala :- method mtlb ki kis type ki request bhejna chahte hai get post etc. doosra :- url ki kaha pr request bhejni hai
+    // // xhr.open('GET', requestURl)
+    // // // abhi bhi request gayi nhi hai... open se sirf request prepare hoti hai bhejati nhi hai ... open apane aap se caal nahi hota hai use call krna pata hai.. ab call kaise kare ise?
+    // // xhr.send() // abhi ko jaa kr open call hua hai.
+    // // // ab call krte hi request ki states change hoti rahti hai ab kuchh 4-5 states hoti hai jaakr mdn se padh lena..... ab hume kaise pata chalega ki abhi konsi state pr hai...uske liye console.log(xhr.readyState) se check kr skte hai but ye to sirf ek baar batayega current state ko baar baar nhi to uske liye hume batana padega na ki baar baar konsi state pr jaa raha hai wo batao hume to uske liye hot ahia xhr.onReadyStateChange = function(){} ye ek function letta hia ki jb koi state change ho to mujhe kya karna hai...
+    // // console.log(xhr.readyState)
+
+    // xhr.open('GET' , requestURl)
+    // xhr.onreadystatechange = () => { // jaise jaise states change ho rahi hai har baar ye function execute hota hai.
+    //     console.log("State:", xhr.readyState);
+    //     if(xhr.readyState === 4){ // ab in states ke baare me achhe se padh kar hum ispr conditions laga kr apna kaam karwa skte hai...
+    //         if(xhr.status === 200){
+    //             // const data  = xhr.responseText // ab hum uss reponse data ko ek data naam ke variable me hold kr raha hun taaki uske or bhi properties ko access kr paun.
+    //             // console.log(data.followers) // ab yaha to undefined aa raha hai..kyun ? typeof data krke check krenge to pata lagega ki mera deta to string form me aaya hai but hum to use object samajh rahe the so mostly jb bhi humare pass response ata hai wo mostly string type hi hota hai halaki hum use typeof use krke check kr liyakare.
+    //             // ise pahale JSON me convert karna hoga.. ab wo kaise karenge?
+    //             const data = JSON.parse(xhr.responseText) // JSON.parse(x) kisi string x ko JSON me convert kr deta hai.
+    //             console.log("followers :- ",data.followers)
+    //         }
+    //         else {
+    //         console.error("Error:", xhr.status)
+    //     }
+    //         // Jab readyState === 4 hota hai → iska matlab response aagaya hai.
+    //         // xhr.status se HTTP status check karte hain (200 = OK, 404 = Not Found, etc.).
+    //         // xhr.responseText me actual response (JSON string) aata hai.
+    //     }
+    // }
+    // xhr.send()
+
+
+    //                                              console.log
+
+    // console.log() , document etc ye sabhi browser ke paas hote hai ye browser ki apni cheeze hai ye javascript ka part nhi hai.
+    // console.log() ye ek debugging tool hai jo ki hume apne code me kahi bhi use kr skte hai jaha pr hume apne code ke kisi bhi part ko check krna ho ki wo sahi se kaam kar raha hai ya nhi to hum console.log() use kr skte hai.
+    // it is injected during runtime.
+    
+    // javascript ko nodejs ya kayi browsers chalate hai.
+    // ab nodejs bhi ek tarah ka implementtation hai v8 engine ka.
+    // ab v8 engine kya hai? v8 engine google ka ek open source javascript engine hai jo ki c++ me likha gaya hai.
+    // ab v8 engine ko google chrome aur nodejs dono use krte hai.
+    // ab v8 engine ke andar kai sare components hote hai jisme se ek component hai console.
+    // ab console kya hai? console ek global object hai jo ki v8 engine ke andar hota hai.
+    // ab console ke andar kai sare methods hote hai jisme se ek method hai log().
+    
+
+</script>
+
+</html>
