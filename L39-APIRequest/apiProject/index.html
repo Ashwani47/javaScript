@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Github Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+      <h1>GitHub User Details</h1>
+      <div class="card">
+        <h3 class="user">Enter a username</h3>
+        <img src="" alt="User Avatar" class="avatar">
+        <div class="userInfo">
+          <p><strong>Username:</strong> <span id="display-username">---</span></p>
+          <p><strong>Repositories:</strong> <span id="display-repos">---</span></p>
+          <p><strong>Profile URL:</strong> <a id="display-url" href="#" target="_blank" style="color: aqua;">---</a></p>
+        </div>
+      </div>
+      <div class="userDetails">
+        <form>
+          <p>
+              <label for="username">Username: </label>
+              <input type="text" id="username" placeholder="Enter GitHub username">
+            </p>
+            <button type="submit" class="find">Find</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
